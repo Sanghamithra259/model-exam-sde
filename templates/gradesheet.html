@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Grade Sheet</title>
+</head>
+
+<body>
+
+<h2>Student Grade Sheet</h2>
+
+<p>Name: {{ record.name }}</p>
+<p>Subject: {{ record.subject }}</p>
+<p>Marks: {{ record.marks }}</p>
+<p>Credits: {{ record.credits }}</p>
+<p>Grade: {{ record.grade }}</p>
+<p>GPA: {{ record.gpa }}</p>
+
+<br>
+
+<p><b>MLflow Run ID:</b> {{ run_id }}</p>
+
+<br>
+
+<a href="/">Enter another student</a>
+
+</body>
+</html>
