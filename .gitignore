@@ -1,0 +1,32 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.env/
+env/
+
+# Flask instance folder (database, runtime files)
+instance/
+
+# SQLite databases
+*.db
+*.sqlite3
+
+# MLflow tracking artifacts
+mlruns/
+
+# Environment variables
+.env
+
+# VS Code settings
+.vscode/
+
+# Mac system files
+.DS_Store
+
+# Linux temporary files
+*~

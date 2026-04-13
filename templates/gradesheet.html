@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Grade Sheet</title>
+<title>Gradesheet</title>
 </head>
 
 <body>
 
 <h2>Student Grade Sheet</h2>
+
+<a href="/enter">Back</a> |
+<a href="/logout">Sign Out</a>
+
+<br><br>
 
 <p>Name: {{ record.name }}</p>
 <p>Subject: {{ record.subject }}</p>
@@ -15,13 +21,10 @@
 <p>Grade: {{ record.grade }}</p>
 <p>GPA: {{ record.gpa }}</p>
 
-<br>
-
-<p><b>MLflow Run ID:</b> {{ run_id }}</p>
-
-<br>
-
-<a href="/">Enter another student</a>
+{% if run_id %}
+<p>MLflow Run ID: {{ run_id }}</p>
+{% endif %}
 
 </body>
+
 </html>

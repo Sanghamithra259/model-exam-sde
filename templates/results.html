@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>My Results</title>
+</head>
+
+<body>
+
+<h2>Results</h2>
+
+<p>Welcome {{ username }}</p>
+
+<a href="/enter">Enter More Marks</a> |
+<a href="/logout">Sign Out</a>
+
+<br><br>
+
+<table border="1">
+
+<tr>
+<th>Subject</th>
+<th>Marks</th>
+<th>Credits</th>
+<th>Grade</th>
+<th>GPA</th>
+</tr>
+
+{% for r in records %}
+
+<tr>
+
+<td>{{ r.subject }}</td>
+
+<td>{{ r.marks }}</td>
+
+<td>{{ r.credits }}</td>
+
+<td>{{ r.grade }}</td>
+
+<td>{{ r.gpa }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+
+</html>
