@@ -1,6 +1,9 @@
 from flask import Flask, render_template, request
 import mlflow
 
+# Configure tracking URI to use local SQLite database
+mlflow.set_tracking_uri("sqlite:///mlflow.db")
+
 # Optional: name the experiment
 mlflow.set_experiment("Result Processing System")
 
@@ -53,9 +56,13 @@ def submit():
     records.append(record)
 
     # MLflow logging
-    with mlflow.start_run() as run:
-        mlflow.log_param("marks", marks)
-        mlflow.log_param("credits", credits)
+    with mlflow.start_run(run_name=name + "_" + subject) as run:
+
+        mlflow.log_param("student", name)
+        mlflow.log_param("subject", subject)
+
+        mlflow.log_metric("marks", marks)
+        mlflow.log_metric("credits", credits)
         mlflow.log_metric("gpa", gpa)
 
         run_id = run.info.run_id
