@@ -3,6 +3,7 @@
 
 <head>
 <title>Gradesheet</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
@@ -24,6 +25,8 @@
 {% if run_id %}
 <p>MLflow Run ID: {{ run_id }}</p>
 {% endif %}
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
 
 </body>
 
